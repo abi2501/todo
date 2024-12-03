@@ -5,8 +5,13 @@ function TodoEditForm({ todo, saveTodo }) {
     const [todoValue, setTodoValue] = useState(todo.todoText)
 
     const handleSaveTodo = () => {
-        saveTodo(todo.id, todoValue);
-        setTodoValue('');
+        if (todoValue.trim()) {
+            saveTodo(todo.id, todoValue);
+            setTodoValue('');
+        }
+        else {
+            return
+        }
     }
 
     return (
