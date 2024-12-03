@@ -14,7 +14,6 @@ function TodoAddForm() {
 
     const handleTodoSubmit = (e) => {
         if (e.keyCode === 13) {
-            console.log(e.keyCode);
             handleAddTodo();
         }
     }
