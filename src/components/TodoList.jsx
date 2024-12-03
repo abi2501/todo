@@ -8,7 +8,7 @@ function TodoList({ todo, handleTodoStatus, handleEditMode, handleDeleteTodo }) 
         <li key={todo.id} className='flex fled-row flex-wrap justify-evenly py-3'>
             <div className='grid  col-span-4 sm:grid-cols-2'>
                 <div className='flex flex-wrap flex-row space-x-2'>
-                    <input type='checkbox' className='sm:w-5 cursor-pointer' onChange={() => handleTodoStatus(todo.id)} />
+                    <input type='checkbox' className='sm:w-5 cursor-pointer' checked={todo.status} onChange={() => handleTodoStatus(todo.id)} />
                     <p className='w-60 content-center break-words'>{todo.todoText}</p>
                 </div>
                 <div className='space-x-1 ml-auto flex flex-wrap flex-row content-center'>

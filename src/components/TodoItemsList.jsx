@@ -31,7 +31,6 @@ function TodoItemsList({ todoList }) {
     }
 
     const handleTodoStatus = (id) => {
-        console.log("Call dispatcher ", id);
         dispatcher({
             type: "UPDATE_TODO_STATUS",
             "id": id

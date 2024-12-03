@@ -3,7 +3,6 @@ import { v4 as uuid } from 'uuid'
 const todoReducer = (state, action) => {
 
     if (action.type === "ADD_TODO") {
-        console.log("Add todo");
         return [...state, {
             "id": uuid(),
             "todoText": action.todoText,
