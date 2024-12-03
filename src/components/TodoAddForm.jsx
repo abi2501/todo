@@ -9,7 +9,14 @@ function TodoAddForm() {
     const [todoText, setTodoText] = useState("");
 
     function changeHandler(e) {
-        setTodoText(e.target.value)
+        setTodoText(e.target.value);
+    }
+
+    const handleTodoSubmit = (e) => {
+        if (e.keyCode === 13) {
+            console.log(e.keyCode);
+            handleAddTodo();
+        }
     }
 
     const handleAddTodo = () => {
@@ -27,10 +34,10 @@ function TodoAddForm() {
 
     return (
         <div className='flex flex-wrap flex-row border justify-center p-5 space-y-1'>
-            <input type='text' className='sm:w-80 p-2 mx-5' value={todoText} onChange={(e) => changeHandler(e)} placeholder='New Todo ' />
+            <input type='text' className='sm:w-80 p-2 mx-5' value={todoText} onKeyDown={(e) => handleTodoSubmit(e)} onChange={(e) => changeHandler(e)} placeholder='New Todo ' />
             <button
                 className='bg-blue-500 hover:bg-blue-700  text-white rounded p-2'
-                onClick={handleAddTodo}>
+                onClick={(e) => handleAddTodo(e)}>
                 Add Task
             </button>
         </div>
