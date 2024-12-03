@@ -41,7 +41,7 @@ function TodoItemsList({ todoList }) {
     return (
         <ul className='h-screen overflow-y-auto'>
             {
-                todoList.map((todo) => (
+                [...todoList].reverse().map((todo) => (
                     todo.editingEnabled ? <TodoEditForm key={todo.id} todo={todo} saveTodo={handleUpdateTodo} />
                         : <TodoList key={todo.id} todo={todo} handleTodoStatus={handleTodoStatus} handleEditMode={handleEditMode} handleDeleteTodo={handleDeleteTodo} />
                 ))
